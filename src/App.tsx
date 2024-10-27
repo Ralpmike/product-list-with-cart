@@ -29,10 +29,10 @@ function App() {
 export default App
 
 
-function ConfirmatoryModal() {
-  return (
-    <div>
+// function ConfirmatoryModal() {
+//   return (
+//     <div>
 
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
