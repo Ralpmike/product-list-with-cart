@@ -27,3 +27,12 @@ function App() {
 }
 
 export default App
+
+
+function ConfirmatoryModal() {
+  return (
+    <div>
+
+    </div>
+  )
+}

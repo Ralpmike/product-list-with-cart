@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { CardProps } from "../types/types"
+import PaymentButton from "../ui/PaymentButton";
 
 type Props = {
   cartItems: CardProps[];
@@ -113,9 +114,12 @@ function DisplayTotal({ cartItems }: Props) {
         <p>This is a <span className="text-[var(--Rose-500)] font-bold">carbon neutral</span> delivery</p>
       </div>
 
-      <button className=" bg-[var(--Red)] w-full text-white py-4 rounded-[30px] hover:bg-[var(--Rose-900)]">
+
+      <PaymentButton className="bg-[var(--Red)] w-full text-white py-4 rounded-[30px] hover:bg-[var(--Red-900)]">
         Confirm Order
-      </button>
+      </PaymentButton>
+
+
     </div>
   )
 }
