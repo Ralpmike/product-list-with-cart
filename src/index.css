@@ -38,10 +38,10 @@ html {
 }
 .container h1 {
   margin-bottom: 20px;
-  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-size: clamp(1.5rem, 2vw, 3rem);
 }
 .clamp-h2-text {
-  font-size: clamp(1.5rem, 3vw, 2.6rem);
+  font-size: clamp(1.5rem, 2vw, 3rem);
 }
 
 .card-container {
