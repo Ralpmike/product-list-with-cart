@@ -1,14 +1,14 @@
 import { CardProps } from "../types/types"
 import Button from "../ui/Button"
 
-type ComponeentProp = {
+type ComponentProp = {
   onSetCartItems?: (update: (item: CardProps[]) => CardProps[]) => void,
   cartItems?: CardProps[],
   desserts?: CardProps[],
 
 }
 
-export default function Card({ desserts, onSetCartItems, cartItems }: ComponeentProp) {
+export default function Card({ desserts, onSetCartItems, cartItems }: ComponentProp) {
 
   return (
     <div className="container">
@@ -97,7 +97,7 @@ function CardItem({ dessert, onSetCartItems, cartItems }: CartItemProps) {
           </svg>
         </div>
         <span className="text-white">{currentItem?.quantity}</span>
-        <div className="btn-add" onClick={() => handleIncrement(id)}>
+        <div className="btn-add" onClick={() => handleIncrement(id)} >
           <svg data-slot="icon" fill="none" strokeWidth="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
           </svg>
