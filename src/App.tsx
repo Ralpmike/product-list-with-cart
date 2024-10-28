@@ -28,14 +28,6 @@ function App() {
   }
 
 
-  // useEffect(() => {
-  //   const storeItems = localStorage.getItem("cartItems")
-  //   if (storeItems) {
-  //     setCartItems(JSON.parse(storeItems))
-
-  //   }
-  // }, [])
-
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems))
   }, [cartItems])
@@ -53,7 +45,7 @@ function App() {
           <div className='bg-[rgba(0,0,0,0.5)] fixed top-0 left-0 w-full h-full flex justify-center items-center'
             onClick={handleCloseModal}>
 
-            <div onClick={(e) => e.stopPropagation()} className='w-full max-w-[580px] max-h-[700px] bg-white rounded'>
+            <div onClick={(e) => e.stopPropagation()} className='w-full max-w-[600px] max-h-[700px] bg-white rounded'>
               <ConfirmatoryModal cartItems={cartItems} onResetCart={resetCart} />
             </div>
           </div>

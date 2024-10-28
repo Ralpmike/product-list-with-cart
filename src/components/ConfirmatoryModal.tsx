@@ -12,15 +12,16 @@ export default function ConfirmatoryModal({ cartItems, onResetCart }: Props) {
   return (
     <div className=' bg-white max-w-[640px] w-full p-8 rounded-lg'>
       <img src="/images/icon-order-confirmed.svg" alt="" />
-      <h2 className='font-bold text-[var(--Rose-900)] my-4 text-[2rem] sm:text-[2rem] md:text-[2.5rem] xl:text-[3rem]'>Order Confirmed</h2>
+      <h2 className='font-bold text-[var(--Rose-900)] my-4 text-[1.9rem] sm:text-[2rem] md:text-[2.5rem] xl:text-[3rem]'>Order Confirmed</h2>
       <p className='text-[1.125rem] text-[var(--Rose-500)] mb-2'>We hope you enjoy your food</p>
 
-      <div className='bg-[var(--Rose-50)] flex flex-col gap-4 max-h-[300px] overflow-y-scroll '>
+      <div className='bg-[var(--Rose-50)] flex flex-col gap-4 max-h-[300px] overflow-y-scroll w-full'>
         {
           cartItems?.map((item) => (
-            <div className='flex justify-between items-center p-4 border-b-[1px] border-[var(--Rose-100)]' key={item.id}>
+            <div className='grid grid-cols-[1fr_3fr_1fr] w-full gap-2 items-center p-1 md:p-4 border-b-[1px] border-[var(--Rose-100)]' key={item.id}>
+              <img src={item.image?.thumbnail} alt={item?.name} />
               <div>
-                <h2 className="text-[1.125rem] font-medium my-2">{item.name}</h2>
+                <h2 className=" text-[14px] md:text-[1.125rem] font-medium md:my-2">{item.name}</h2>
                 <span className="text-[var(--Red)] font-medium">{item.quantity}x</span>
                 <span className="mx-[10px] text-[var(--Rose-400)]">@${item.price.toFixed(2)}</span>
 
