@@ -8,7 +8,10 @@ import ConfirmatoryModal from './components/ConfirmatoryModal'
 
 function App() {
 
-  const [cartItems, setCartItems] = useState<CardProps[]>([])
+  const [cartItems, setCartItems] = useState<CardProps[]>(() => {
+    const storedItems = localStorage.getItem("cartItems");
+    return storedItems ? JSON.parse(storedItems) : []
+  })
   const [showPayment, setShowPayment] = useState<boolean>(false)
 
   function handleShowModal() {
@@ -25,13 +28,13 @@ function App() {
   }
 
 
-  useEffect(() => {
-    const storeItems = localStorage.getItem("cartItems")
-    if (storeItems) {
-      setCartItems(JSON.parse(storeItems))
+  // useEffect(() => {
+  //   const storeItems = localStorage.getItem("cartItems")
+  //   if (storeItems) {
+  //     setCartItems(JSON.parse(storeItems))
 
-    }
-  }, [])
+  //   }
+  // }, [])
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems))
